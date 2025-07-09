@@ -1,0 +1,89 @@
+.login {
+    height: 100vh;
+    background-image:linear-gradient(#0000007e, #0000007e), url(/hero_banner.jpg);
+    padding: 20px 8%;
+    background-size: cover;
+    background-position: center;
+}
+.login-logo {
+    width: 150px;
+    margin: 20px 0;
+}
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background-color: #000000b3;
+    padding: 60px;
+    border-radius: 5px;
+}
+.login-form h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+.login-form form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+.login-form input::placeholder {
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 500;
+}
+.login-form input:focus {
+    outline: none;
+    border: 1px solid #fff;
+}
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D81F26;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-help {
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.remember-me input {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+.login-info {
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+.login-info span {
+    color: #fff;
+    cursor: pointer;
+}
+.error-message {
+    color: #D81F26;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+.need-help {
+    cursor: pointer;
+}

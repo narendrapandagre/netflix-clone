@@ -1,0 +1,22 @@
+.search {
+    background-color: #000;
+    height: 100vh;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+.search-container input {
+    width: 50%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #111;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
