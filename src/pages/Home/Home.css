@@ -60,6 +60,27 @@
     padding-left: 6%;
 
 }
+@media (max-width: 1024px) {
+    .hero-caption .titlecards {
+        display: none;
+    }
+    .hero-caption .btns{
+        margin-bottom: 30px;
+    }
+    .hero-caption p {
+        font-size: 15px;
+    }
+    .hero-btns .btn {
+        font-size: 14px;
+    }
+    .hero-btns .btn img {
+        width: 20px;
+    }
+    .caption-img {
+        width: 45%;
+        max-width: 350px;
+    }
+}
 @media (max-width: 768px) {
     .hero-caption p {
         font-size: 12px;
@@ -87,10 +108,10 @@
 }
 @media (max-width: 320px) {
     .hero-caption p {
-        font-size: 6px;
+        font-size: 12px;
     }
     .hero-btns .btn {
-        font-size: 6px;
+        font-size: 12px;
     }
     .hero-btns .btn img {
         width: 15px;

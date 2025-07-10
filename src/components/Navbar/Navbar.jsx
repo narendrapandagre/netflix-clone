@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react';
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 import search_icon from '../../assets/search_icon.svg'
@@ -8,6 +8,20 @@ import caret_icon from '../../assets/caret_icon.svg'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+const navref = useRef();
+  useEffect(()=> {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 80) {
+        navref.current.classList.add('nav-dark');
+      } else {
+        navref.current.classList.remove('nav-dark');
+      }
+    });
+    return () => {
+      window.removeEventListener('scroll', () => {});
+    } 
+  })
+
   const navigate = useNavigate();
   const handleSignOut = () => {
     localStorage.removeItem('token');
@@ -20,7 +34,7 @@ const Navbar = () => {
     navigate('/mylist');
   }
   return (
-    <div className='navbar'>
+    <div ref={navref} className='navbar'>
         <div className="navbar-left">
            <img src={logo} alt='Netflix Logo' onClick={() => navigate('/')}/>
            <ul>
