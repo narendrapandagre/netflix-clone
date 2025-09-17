@@ -21,7 +21,7 @@ const TitileCards = ({ title, category }) => {
   }, []);
 
   const filteredCards = category
-    ? cards_data.filter(card => card.category === category)
+    ? cards_data.filter((card) => card.category === category)
     : cards_data;
 
   return (

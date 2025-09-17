@@ -9,6 +9,12 @@
     background-image: linear-gradient(180deg, #000000, transparent);
     z-index: 1;
 }
+.nav-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .navbar-left {
     display: flex;
     align-items: center;
@@ -26,11 +32,28 @@
 .navbar-left ul li {
     cursor: pointer;
     transition: color 0.3s ease;
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar-left ul li:hover {
+  background: #e50914;
+}
+
+.navbar-left ul li.active {
+  background: #e50914;
 }
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding-right: 10px;
 }
 .navbar-right .icon {
     cursor: pointer;
@@ -72,8 +95,18 @@
     display: block;
 }
 .nav-dark {
-    background-color: #252525;
+    background: linear-gradient(90deg, rgb(23 1 1 / 88%) 0%, rgb(128 3 3 / 81%) 50%, rgb(19 1 1 / 90%) 100%);
     color: #fff;
+    padding: 10px 0px;
+}
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
 }
 @media screen and (max-width: 1024px) {
     .navbar-left {
