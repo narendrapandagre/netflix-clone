@@ -43,7 +43,7 @@ const Login = () => {
 
   return (
     <div className='login'>
-      <img src={Logo} alt="Netflix Logo" className='login_logo' />
+      <img src={Logo} alt="Netflix Logo" onClick={() => navigate('/')} className='login_logo' />
       <div className="login-form">
         <h1>{signSate}</h1>
         <form onSubmit={handleFormSubmit}>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 import search_icon from '../../assets/search_icon.svg'
@@ -12,6 +12,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 80) {
@@ -23,6 +25,17 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!navref.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleSignOut = () => {
@@ -88,14 +101,20 @@ const Navbar = () => {
           <img src={search_icon} alt='' className='icons' onClick={handleSearch}/>
           <p onClick={() => navigate('/children')}>Children</p>
           <img src={bell_icon} alt='' className='icons'/>
-          <div className="navbar-profile">
+          <div className="navbar-profile" onClick={() => setDropdownOpen(!dropdownOpen)}>
             <div className="nav-profile">
               <img src={profile_img} alt='' className='profile'/>
             </div>
             <img src={caret_icon} alt='' />
-            <div className="dropdown">
-              <p onClick={handleSignOut}>Sign Out of Netflix</p>
-            </div>
+
+            {dropdownOpen && (
+              <div className="dropdown">
+                <p onClick={() => navigate('/profile')}>Manage Profiles</p>
+                <p onClick={() => navigate('/account')}>Account</p>
+                <p onClick={() => navigate('/help')}>Help Center</p>
+                <p onClick={handleSignOut}>Sign Out of Netflix</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -103,4 +122,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
