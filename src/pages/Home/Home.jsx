@@ -23,7 +23,6 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <Navbar />
       <div className="hero">
         <img src={hero_banner} alt="Hero" className='banner-img'/>
         <div className="hero-caption">

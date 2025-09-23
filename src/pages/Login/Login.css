@@ -4,10 +4,12 @@
     padding: 20px 8%;
     background-size: cover;
     background-position: center;
+    text-align: center;
 }
-.login-logo {
-    width: 150px;
+.login_logo {
+    width: 40%;
     margin: 20px 0;
+    cursor: pointer;
 }
 .login-form {
     width: 100%;
